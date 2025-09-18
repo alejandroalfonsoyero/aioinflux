@@ -1,30 +1,7 @@
-aioinflux
-=========
-.. image:: https://img.shields.io/circleci/project/github/gusutabopb/aioinflux/master.svg
-   :target: https://circleci.com/gh/gusutabopb/aioinflux
-   :alt: CI status
+This project is a fork of unmaintained and archived project [aioinflux](https://github.com/gusutabopb/aioinflux). It intends to keep asyncio python support for influxdb 1.x.
 
-.. image:: https://img.shields.io/codecov/c/github/gusutabopb/aioinflux.svg
-   :target: https://codecov.io/gh/gusutabopb/aioinflux
-   :alt: Coverage
-
-.. image:: https://img.shields.io/pypi/v/aioinflux.svg
-   :target: https://pypi.python.org/pypi/aioinflux
-   :alt: PyPI package
-
-.. image:: https://img.shields.io/pypi/pyversions/aioinflux.svg
-   :target: https://pypi.python.org/pypi/aioinflux
-   :alt: Supported Python versions
-
-.. image:: https://readthedocs.org/projects/aioinflux/badge/?version=stable
-   :target: https://aioinflux.readthedocs.io/en/stable/?badge=stable
-   :alt: Documentation status
-
-
-
-| **🚨This project is archived and unmantained.🚨**
-| **For InfluxDB v2+ support, please use the official Python client library.**
-|
+Latest changes include:
+- Update serialization to be compatible with latest versions of numpy
 
 Asynchronous Python client for `InfluxDB`_. Built on top of
 `aiohttp`_ and `asyncio`_.
@@ -44,7 +21,7 @@ Please refer to the `documentation`_ for more details.
 Installation
 ------------
 
-Python 3.6+ is required.
+Python 3.8+ is required.
 You also need to have access to a running instance of InfluxDB.
 
 .. code:: bash

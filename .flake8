@@ -1,0 +1,4 @@
+[flake8]
+exclude = .git,venv,build,demo
+max-line-length = 119
+ignore = F403, F405

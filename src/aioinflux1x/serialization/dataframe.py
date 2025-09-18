@@ -101,17 +101,17 @@ def serialize(df, measurement, tag_columns=None, **extra_tags) -> bytes:
     for i, (k, v) in enumerate(df.dtypes.items()):
         k = k.translate(key_escape)
         if k in tag_columns:
-            tags.append(f"{k}={{p[{i+1}]}}")
-        elif issubclass(v.type, np.integer):
-            fields.append(f"{k}={{p[{i+1}]}}i")
-        elif issubclass(v.type, (np.float, np.bool_, np.floating)):
-            fields.append(f"{k}={{p[{i+1}]}}")
+            tags.append(f"{k}={{p[{i + 1}]}}")
+        elif issubclass(v.type, int):
+            fields.append(f"{k}={{p[{i + 1}]}}i")
+        elif issubclass(v.type, (float, bool, float)):
+            fields.append(f"{k}={{p[{i + 1}]}}")
         else:
             # String escaping is skipped for performance reasons
             # Strings containing double-quotes can cause strange write errors
             # and should be sanitized by the user.
             # e.g., df[k] = df[k].astype('str').str.translate(str_escape)
-            fields.append(f"{k}=\"{{p[{i+1}]}}\"")
+            fields.append(f"{k}=\"{{p[{i + 1}]}}\"")
     fmt = (f'{measurement}', f'{"," if tags else ""}', ','.join(tags),
            ' ', ','.join(fields), ' {p[0].value}')
     f = eval("lambda p: f'{}'".format(''.join(fmt)))
